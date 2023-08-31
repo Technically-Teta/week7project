@@ -4,7 +4,13 @@ import "./displayweather.css";
 
 function DisplayWeather(props) {
   const { data } = props;
-  const iconurl =
+  const celsiusTemperature = Math.floor(data.main.temp_max - 273.15);
+  const fahrenheitTemperature = Math.floor((celsiusTemperature * 9/5) + 32);
+
+console.log(`Celsius: ${celsiusTemperature}°C`);
+console.log(`Fahrenheit: ${fahrenheitTemperature}°F`);
+
+
     " " +
     `${data.code !== 404 ? data.weather[0].icon : null}` +
     ".png";
@@ -25,12 +31,14 @@ function DisplayWeather(props) {
               {Math.floor(data.main.temp )}
               <sup>o</sup>
             </h1>
+                                    
             <span className="weather-main">{data.weather[0].main}</span>
-            <img className="weather-icon" src={iconurl} alt="" srcSet="" />
-            <span className="weather-description">
+            <img className="weather-icon" src ={`https://api.openweathermap.org/img/w/${data.weather[0].icon}.png`}  />
+                <span className="weather-description">
               {" "}
               {data.weather[0].description}
-            </span>
+                </span> 
+
           </div>
           <div className="weatherdetails">
             <div className="section1">
@@ -42,8 +50,10 @@ function DisplayWeather(props) {
                   </td>
                   <td>
                     <span>
-                      {data.main.temp_max }/
-                      {data.main.temp_min }
+                      
+                      {data.main.fahrenheitTemperature}
+                   
+
                     </span>
                   </td>
                 </tr>
