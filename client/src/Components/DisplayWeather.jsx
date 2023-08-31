@@ -3,6 +3,8 @@ import"./displayweather.css"
 
 function DisplayWeather(props) {
     const {data} = props
+
+//icons url placeholder    
   return (
 
     <div className='displayweather'>  
@@ -17,7 +19,8 @@ function DisplayWeather(props) {
         data.main.temp
 
     </h1>
-
+    <span className='weather-main'>   {data.weather[0].main}</span>
+      
     </div>
 </div>
 
