@@ -12,22 +12,24 @@ function Weather(){
 
 const [weather, setWeather] = useState([]);
 
+
 async function weatherData(e){
-    e.preventDefault();
-    if (form.city ==''){
-        alert("Add the City Name please");
-    }else{
-        const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${form.city}&APPID=${APIKEY}`
-        ).then(res => console.log(res.json))  // this is a promise
-        .then((data) => (data))  //return the data to use and we will log it
-     
-        //sets weather state and obj as key value pair
-        setWeather({
-            data :data
-        });
+   e.preventDefault();
+   if (form.city ==''){
+       alert("Add the City Name please");
+   }else{
+       const url = `https://api.openweathermap.org/data/2.5/weather?q=${form.city}&APPID=${APIKEY}`
+       console.log("the url is : " + url);
+       const data = await fetch(url)
+           .then(res => res.json());  // this returns a promise
 
 
-    }
+       console.log("The data is ..." + data);
+       //sets weather state and obj as key value pair
+       setWeather({
+           data :data
+       });
+   }
 }
 
 
@@ -61,7 +63,7 @@ async function weatherData(e){
 
              <div className="humidty">
                 <span className="humidyweather">
-                    How humid is it?_ 
+                   
                 </span>
              </div>
 
