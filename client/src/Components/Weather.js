@@ -14,7 +14,9 @@ async function weatherData(e){
     if (form.city ==''){
         alert("Add the City Name please");
     }else{
-        const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${form.city}&APPID=${APIKEY}`)
+        const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${form.city}&APPID=${APIKEY}`
+        ).then(res => console.log(res.json))  // this is a promise
+        .then((data) => console.log(data))
     }
 }
 
@@ -36,7 +38,9 @@ async function weatherData(e){
             <form>
                 <input type="text" name="city" placeholder="city" onChange={e => handleChange(e)}/>
                 &nbsp; &nbsp; &nbsp; &nbsp; 
-            <button className="getweather" >Submit</button>
+             <button className="getweather" onClick={(e) => weatherData(e)}>
+          Submit
+        </button>
             </form>
 
             </div>
