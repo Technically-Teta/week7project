@@ -21,6 +21,10 @@ function DisplayWeather(props) {
     </h1>
     <span className='weather-main'>   {data.weather[0].main}</span>
       
+    <img></img>
+    <span className='weather-description'></span>
+      {data.weather[0].description}
+
     </div>
 </div>
 
