@@ -73,7 +73,7 @@ async function weatherData(e){
                 weather.data != undefined ?
                 <div>
                     <DisplayWeather data = {weather.data} />
-
+                        console.log(data)
 
                 </div>
                 :null
