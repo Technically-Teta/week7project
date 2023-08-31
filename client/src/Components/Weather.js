@@ -3,11 +3,13 @@ import "./weather.css";
 
 function Weather(){
     const APIKEY = '8c03101cdaa9dc6cf93256ee7318adf1'
-    const [weather, setWeather] = useState([]);
+    
     const[form, setForm]= useState ({  
         city: "",
         country: "",
   });
+
+const [weather, setWeather] = useState([]);
 
 async function weatherData(e){
     e.preventDefault();
@@ -16,9 +18,12 @@ async function weatherData(e){
     }else{
         const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${form.city}&APPID=${APIKEY}`
         ).then(res => console.log(res.json))  // this is a promise
-        .then((data) => console.log(data))
+        .then((data) => (data))  //return the data to use and we will log it
+     setWeather(weather);
     }
 }
+
+
 
 
  const handleChange = (e) => {
