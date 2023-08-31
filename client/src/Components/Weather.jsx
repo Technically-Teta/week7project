@@ -4,10 +4,10 @@ import DisplayWeather from "./DisplayWeather";
 
 function Weather(){
     const APIKEY = '8c03101cdaa9dc6cf93256ee7318adf1'
-    
+    // state replaces the data with each rendering and rerendering. 
     const[form, setForm]= useState ({  
         city: "",
-        country: "",
+       
   });
 
 const [weather, setWeather] = useState([]);
