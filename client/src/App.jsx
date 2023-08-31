@@ -1,16 +1,13 @@
-import './App.css';
-import { useState, useEffect } from "react";
-import weatherSubmit from './Components/weatherSubmit';
-import weatherID from './Components/weatherID';
-import Weather from './Components/Weather';
+import React from "react";
+import "./App.css";
+import Weather from "./Components/Weather";
 
 function App() {
-  
-return(
-  <div className='App'>
-    <Weather/>
-
-  </div>
-     );
+  return (
+    <div className="App">
+      <Weather />
+    </div>
+  );
 }
+
 export default App;
