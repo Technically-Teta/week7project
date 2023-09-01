@@ -16,13 +16,6 @@ app.get('/contactme', (req, res) => {
 })
 
 
-app.use('*', (req, res) => {
-    res.status(404)
-    res.sendFile(path.join(__dirname, '404.html'));
-})
-
-
-
 // creates an endpoint for the route /api
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome' });
@@ -65,3 +58,9 @@ app.get('/api/weather', (req, res) => {
     });
 
 });
+
+app.all('*', (req, res) => {
+   // res.json({ message: 'get all your weather info here!' });
+     res.json({ message: 'ERROR NO PAGE HERE!' });
+})
+

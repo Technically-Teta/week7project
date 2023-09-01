@@ -17,6 +17,22 @@
     margin-top: 30px;
 }
 
+.displayweather .weatherdetails
+{
+   
+    margin-left: 50px;
+        margin-right: 50px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: initial;
+        grid-gap: 20px;
+        justify-content: center;
+        justify-items: stretch;
+        align-items: baseline;
+        align-content: center;
+
+}
+
 .weather form input {
     padding: 10px;
     border: none;
@@ -26,7 +42,7 @@
 
 .weather form input:focus {
     outline: none;
-    border-bottom: 3px dashed rgb(2, 57, 88);
+    border-bottom: 2px dashed rgb(2, 57, 88);
 }
 
 .weather .getweather {
@@ -38,7 +54,7 @@
     border: 2px solid black;
     background: rgb(2, 57, 88, 0.8);
     cursor: pointer;
-    color: whitesmoke;
+    color: rgb(23, 154, 220);
 }
 
 .weather .getweather:hover {
@@ -58,7 +74,7 @@
 
 
 body {
-    background-color: #fff;
+    background-color: #aaeded;
 }
 
 @media (min-width: 30em) and (max-width: 80em) {

@@ -83,7 +83,7 @@ console.log(`Fahrenheit: ${fahrenheitTemperature}°F`);
                     <h4>Visibility</h4>
                   </td>
                   <td>
-                    <span>{data.visibility / 1000} Km</span>
+                    <span>{data.visibility/1.6093440006147} mph</span>
                   </td>
                 </tr>
               </tbody>
@@ -98,7 +98,7 @@ console.log(`Fahrenheit: ${fahrenheitTemperature}°F`);
                     <h4>Wind</h4>
                   </td>
                   <td>
-                    <span>{Math.floor((data.wind.speed * 18) / 5)} km/hr</span>
+                    <span>{Math.floor((data.wind.speed) / 1.6093440006147)} mph</span>
                   </td>
                 </tr>
                 <tr>
