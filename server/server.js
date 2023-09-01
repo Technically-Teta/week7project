@@ -9,9 +9,23 @@ const PORT = 8080;
 app.use(cors());
 app.use(express.json());
 
+
+app.get('/contactme', (req, res) => {
+    res.sendFile(path.join(__dirname, 'contactme.html'));
+
+})
+
+
+app.use('*', (req, res) => {
+    res.status(404)
+    res.sendFile(path.join(__dirname, '404.html'));
+})
+
+
+
 // creates an endpoint for the route /api
 app.get('/', (req, res) => {
-    res.json({ message: 'Hello from My template ExpressJS' });
+    res.json({ message: 'Welcome' });
   });
 
 // creates an endpoint for the route /api/weather
@@ -26,7 +40,7 @@ app.listen(PORT, () => {
 
   //creates an endpoint for the route /api  -TEST
 app.get('/api', (req, res) => {
-  res.json({ message: 'Hello from my ExpressJS' });
+  res.json({ message: 'get all your weather info here!' });
 });
 
 //creates an endpoint to get a url to get the weather data. 
