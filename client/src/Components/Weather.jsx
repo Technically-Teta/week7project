@@ -17,7 +17,8 @@ function Weather() {
     if (form.city === '') {
       alert("Add the City Name please");
     } else {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${form.city}&APPID=${APIKEY}`;
+      const url =  `http://127.0.0.1:8080/api/weather?cityName=${form.city}`
+      //const url = `https://api.openweathermap.org/data/2.5/weather?q=${form.city}&APPID=${APIKEY}`;
       console.log("the url is : " + url);
       const data = await fetch(url).then((res) => res.json()); // this returns a promise
 
