@@ -50,3 +50,19 @@
     outline: none;
 }
 
+@media screen and (min-width: 480px) {
+    body {
+        background-color: lightgreen;
+    }
+}
+
+
+body {
+    background-color: #fff;
+}
+
+@media (min-width: 30em) and (max-width: 80em) {
+    body {
+        background-color: yellow;
+    }
+}
