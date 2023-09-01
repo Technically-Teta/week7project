@@ -1,9 +1,11 @@
-import React from "react";
 import "./displayweather.css";
+import React, { useState } from "react";
 
 
 function DisplayWeather(props) {
   const { data } = props;
+  
+
   const celsiusTemperature = Math.floor(data.main.temp_max - 273.15);
   const fahrenheitTemperature = Math.floor((celsiusTemperature * 9/5) + 32);
 
@@ -15,12 +17,15 @@ console.log(`Fahrenheit: ${fahrenheitTemperature}°F`);
     `${data.code !== 404 ? data.weather[0].icon : null}` +
     ".png";
   return (
+
+    
+
     <div className="displayweather">
       {data.cod !== 404 ? (
         <React.Fragment>
           <div className="maincard">
             <span className="cardtitle">
-              {data.name} , {data.sys.city}. Weather
+              {data.name} , {data.sys.city} Weather
             </span>
             <span className="cardsubtitle">
               As of {new Date().toLocaleTimeString()}
@@ -28,7 +33,7 @@ console.log(`Fahrenheit: ${fahrenheitTemperature}°F`);
 
             <h1>
               {" "}
-              {Math.floor(data.main.temp )}
+              {fahrenheitTemperature}
               <sup>o</sup>
             </h1>
                                     
@@ -46,12 +51,12 @@ console.log(`Fahrenheit: ${fahrenheitTemperature}°F`);
               <tbody>
               <tr>
                   <td>
-                    <h4>High/Low</h4>
+                    <h4>Base Temp</h4>
                   </td>
                   <td>
                     <span>
                       
-                      {data.main.fahrenheitTemperature}
+                      {fahrenheitTemperature}
                    
 
                     </span>
